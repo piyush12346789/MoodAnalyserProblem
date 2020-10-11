@@ -29,7 +29,25 @@ namespace MoodAnalyserProblem
                 //Returning Happy when case of Null exception
                 return "HAPPY";
             }
-            
+
+        }
+        public string AnalyseMoodLive()
+        {
+            try
+            {
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new MACustomException(MACustomException.ExceptionType.EMPTY_MESSAGE, "mood should not be empty");
+                }
+                if (this.message.Contains("sad"))
+                    return "SAD";
+                else
+                    return "HAPPY";
+            }
+            catch (NullReferenceException)
+            {
+                throw new MACustomException(MACustomException.ExceptionType.NULL_MESSAGE, "mood should not be null");
+            }
         }
     }
 }
