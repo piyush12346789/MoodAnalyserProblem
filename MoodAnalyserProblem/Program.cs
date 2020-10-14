@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoodAnalyzerProblem;
+using System;
 namespace MoodAnalyserProblem
 {
     public class Program
@@ -10,6 +11,7 @@ namespace MoodAnalyserProblem
             MoodAnalyser checkmood = new MoodAnalyser(message);
             string result = checkmood.AnalyseMood(message);
             Console.WriteLine(result + " MOOD");
+            MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyzerProblem.MoodAnalyser", "MoodAnalyser");
         }
     }
 }
