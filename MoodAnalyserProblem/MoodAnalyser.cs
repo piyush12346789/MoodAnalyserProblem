@@ -42,7 +42,7 @@ namespace MoodAnalyserProblem
             {
                 if (this.message.Equals(string.Empty))
                 {
-                    throw new MACustomException(MACustomException.ExceptionType.EMPTY_MESSAGE, "mood should not be empty");
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.EMPTY_MESSAGE, "mood should not be empty");
                 }
                 if (this.message.Contains("sad"))
                     return "SAD";
@@ -51,7 +51,7 @@ namespace MoodAnalyserProblem
             }
             catch (NullReferenceException)
             {
-                throw new MACustomException(MACustomException.ExceptionType.NULL_MESSAGE, "mood should not be null");
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NULL_MESSAGE, "mood should not be null");
             }
         }
     }

@@ -22,12 +22,12 @@ namespace MoodAnalyserProblem
                 }
                 catch (ArgumentNullException)
                 {
-                    throw new MACustomException(MACustomException.ExceptionType.NO_SUCH_CLASS, "class not found.");
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS, "class not found.");
                 }
             }
             else
             {
-                throw new MACustomException(MACustomException.ExceptionType.NO_SUCH_METHOD, "constructor not found.");
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, "constructor not found.");
             }
         }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MoodAnalyserProblem
 {
-    public class MACustomException : Exception
+    public class MoodAnalysisException : Exception
     {
         public enum ExceptionType
         {
@@ -14,7 +14,7 @@ namespace MoodAnalyserProblem
             NO_SUCH_METHOD
         }
         private readonly ExceptionType type;
-        public MACustomException(ExceptionType Type, String message) : base(message)
+        public MoodAnalysisException(ExceptionType Type, String message) : base(message)
         {
             this.type = Type;
         }
