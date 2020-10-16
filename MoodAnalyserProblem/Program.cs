@@ -8,7 +8,7 @@ namespace MoodAnalyserProblem
             Console.WriteLine("Enter message: ");
             string message = Console.ReadLine();
             MoodAnalyser checkmood = new MoodAnalyser(message);
-            string result = checkmood.AnalyseMood(message);
+            string result = checkmood.AnalyseMood();
             Console.WriteLine(result + " MOOD");
             MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyzerProblem.MoodAnalyser", "MoodAnalyser");
         }
