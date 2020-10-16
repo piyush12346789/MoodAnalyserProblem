@@ -193,5 +193,53 @@ namespace MoodAnalyserMSTest
                 Assert.AreEqual("no such method.", e.Message);
             }
         }
+        //TC7.1
+        [TestMethod]
+        public void Given_Happy_Message_With_Reflection_Should_Return_Happy()
+        {
+            //Arrange
+            string message = "HAPPY";
+            string fieldName = "message";
+            //Act
+            string actual = MoodAnalyserFactory.SetField(message, fieldName);
+            //Assert
+            Assert.AreEqual("HAPPY", actual);
+        }
+        //TC7.2
+        [TestMethod]
+        public void Given_Improper_Field_Name_Should_Throw_MoodAnalysisException_Indicating_No_Such_Field()
+        {
+            try
+            {
+                //Arrange
+                string message = "HAPPY";
+                string fieldName = "wrongName";
+                //Act
+                string actual = MoodAnalyserFactory.SetField(message, fieldName);
+            }
+            catch (MoodAnalysisException e)
+            {
+                //Assert
+                Assert.AreEqual("no such field found.", e.Message);
+            }
+        }
+        //TC7.3
+        [TestMethod]
+        public void Given_Null_Message_Should_Throw_MoodAnalysisException_Indicating_Null_Message()
+        {
+            try
+            {
+                //Arrange
+                string message = null;
+                string fieldName = "message";
+                //Act
+                string actual = MoodAnalyserFactory.SetField(message, fieldName);
+            }
+            catch (MoodAnalysisException e)
+            {
+                //Assert
+                Assert.AreEqual("message should not be null.", e.Message);
+            }
+        }
     }
 }
